@@ -1,0 +1,11 @@
+{
+  "name": "@cabemo/op",
+  "version": "1.0.0",
+  "description": "Ontraport unofficial sdk for Nodejs",
+  "main": "index.js",
+  "author": "cabemo",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
+}
