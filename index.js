@@ -21,7 +21,7 @@ exports.Ontraport = class Ontraport {
 		this.appKey = appKey;
 		this.headers = {
 			'Api-Appid': this.appId,
-			'Api-key': this.appKey
+			'Api-Key': this.appKey
 		}
 	}
 
