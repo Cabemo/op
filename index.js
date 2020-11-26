@@ -12,19 +12,21 @@ exports.Ontraport = class Ontraport {
 		contact: 0,
 		tag: 14
 	};
+	appId;
+	apiKey;
+	headers;
 
 	constructor(appId, appKey) {
-		this.interface = axios.create({
-			baseUrl: Ontraport.urls.baseUrl,
-			headers: {
-				'Api-Appid': appId,
-				'Api-key': appKey
-			}
-		});
+		this.appId = appId;
+		this.appKey = appKey;
+		this.headers = {
+			'Api-Appid': this.appId,
+			'Api-key': this.appKey
+		}
 	}
 
 	async searchTagIds(keyword) {
-		const response = await this.interface.get(Ontraport.urls.objects, {
+		const response = await axios.get(`${Ontraport.urls.baseUrl}${Ontraport.urls.objects}`, {
 			params: {
 				objectID: Ontraport.objectIDS.tag,
 				search: keyword
@@ -34,12 +36,12 @@ exports.Ontraport = class Ontraport {
 		return response.data.data;
 	}
 
-	async tagContacts(emails, tagID) {
-		const response = await this.instance.put();
-	}
+	// async tagContacts(emails, tagID) {
+	// 	const response = await this.instance.put();
+	// }
 
 	async getContactsWithTag(tag) {
-		const response = await this.interface.get(Ontraport.urls.objects, {
+		const response = await axios.get(`${Ontraport.urls.baseUrl}${Ontraport.urls.objects}`, {
 			params: {
 				objectID: Ontraport.objectIDS.contact,
 				tag_id: tag
