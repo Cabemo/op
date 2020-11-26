@@ -30,7 +30,8 @@ exports.Ontraport = class Ontraport {
 			params: {
 				objectID: Ontraport.objectIDS.tag,
 				search: keyword
-			}
+			},
+			headers: this.headers
 		});
 
 		return response.data.data;
@@ -45,7 +46,8 @@ exports.Ontraport = class Ontraport {
 			params: {
 				objectID: Ontraport.objectIDS.contact,
 				tag_id: tag
-			}
+			},
+			headers: this.headers
 		});
 
 		return response.data.data;
