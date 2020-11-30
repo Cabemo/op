@@ -26,12 +26,11 @@ module.exports = class Ontraport {
 	}
 
 	async searchTagIds(keyword) {
-		const response = await axios.get(`${Ontraport.urls.baseUrl}${Ontraport.urls.objectsa}`, {
+		const response = await this.client.get(`${Ontraport.urls.baseUrl}${Ontraport.urls.objects}`, {
 			params: {
 				objectID: Ontraport.objectIDS.tag,
 				search: keyword
-			},
-			headers: this.headers
+			}
 		});
 
 		return response.data.data;

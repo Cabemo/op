@@ -1,6 +1,6 @@
 {
   "name": "@cabemo/op",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Ontraport unofficial sdk for Nodejs",
   "main": "index.js",
   "author": "cabemo",
