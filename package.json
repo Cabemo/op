@@ -1,6 +1,6 @@
 {
   "name": "@cabemo/op",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Ontraport unofficial sdk for Nodejs",
   "main": "index.js",
   "author": "cabemo",
@@ -19,5 +19,6 @@
   },
   "scripts": {
     "test": "mocha --timeout 20000 -r dotenv/config ./index.test.js"
-  }
+  },
+  "registry": "https://npm.pkg.github.com/Cabemo"
 }
