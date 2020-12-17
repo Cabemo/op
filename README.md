@@ -2,6 +2,8 @@
 
 This is the unofficial sdk for Ontraport's API on Nodejs.
 
+![Build Status](https://travis-ci.com/Cabemo/op.svg?branch=master)
+
 ## Installation
 
 ```bash
