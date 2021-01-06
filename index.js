@@ -17,6 +17,11 @@ module.exports = class Ontraport {
 	};
 	client;
 
+/**
+ *
+ * @param {string} appId The AppId given by Ontraport
+ * @param {string} appKey The AppKey given by Ontraport
+ */
 	constructor(appId, appKey) {
 		this.client = axios.create({
 			baseURL: Ontraport.urls.baseUrl,
@@ -27,8 +32,12 @@ module.exports = class Ontraport {
 			}
 		});
 	}
-
-	async searchTagIds(keyword) {
+	
+	/**
+	 *
+	 * @param {string} keyword The keyword from which to search tags
+	 */
+	async searchTags(keyword) {
 		const response = await this.client.get(Ontraport.urls.objects, {
 			params: {
 				objectID: Ontraport.objectIDS.tag,
@@ -39,6 +48,11 @@ module.exports = class Ontraport {
 		return response.data.data;
 	}
 
+/**
+ *
+ * @param {string} email Email of contact to tag
+ * @param {string,number} tagID ID of the tag to use
+ */
 	async tagContact(email, tagID) {
 		let response;
 
@@ -72,7 +86,12 @@ module.exports = class Ontraport {
 
 	}
 
-	async getContactsWithTag(tag, select = 'email') {
+	/**
+	 * 
+	 * @param {string,number} tagId The ID of the tag to get the contacts with
+	 * @param {string} select The return value of the contacts found
+	 */
+	async getContactsWithTag(tagId, select = 'email') {
 		let response;
 
 		if (typeof select !== 'string') {
